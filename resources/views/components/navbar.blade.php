@@ -258,7 +258,12 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Account Setting</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Logout</a>
+                                <div class="dropdown-item">
+                                    <form action="/logout" method="post" class="d-inline">
+                                        @csrf
+                                        <button type="submit" class="btn btn-xs btn-secondary btn-sm" style="text-decoration: none;">Logout</button>
+                                    </form>
+                                </div>
                             </li>
                         </div>
                     </ul>

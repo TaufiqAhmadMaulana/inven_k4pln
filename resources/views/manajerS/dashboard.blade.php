@@ -264,18 +264,18 @@
             </div>
         </div>
         <script>
-            $(document).ready(function () {
+            $(document).ready(function() {
                 $("#basic-datatables").DataTable({});
                 $("#multi-filter-select").DataTable({
                     pageLength: 5,
-                    initComplete: function () {
+                    initComplete: function() {
                         this.api()
                             .columns()
-                            .every(function () {
+                            .every(function() {
                                 var column = this;
                                 var select = $('<select class="form-select"><option value=""></option></select>')
                                     .appendTo($(column.footer()).empty())
-                                    .on("change", function () {
+                                    .on("change", function() {
                                         var val = $.fn.dataTable.util.escapeRegex($(this).val());
                                         column
                                             .search(val ? "^" + val + "$" : "", true, false)
@@ -285,7 +285,7 @@
                                     .data()
                                     .unique()
                                     .sort()
-                                    .each(function (d, j) {
+                                    .each(function(d, j) {
                                         select.append('<option value="' + d + '">' + d + "</option>");
                                     });
                             });
@@ -293,6 +293,4 @@
                 });
             });
         </script>
-
-
 </x-layouts>
