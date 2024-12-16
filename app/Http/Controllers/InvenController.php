@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Inven;
 use Illuminate\Http\Request;
 
@@ -15,16 +16,11 @@ class InvenController extends Controller
         $title='inventori-k4';
         $invens=Inven::all();
 
-        $categoryLabels =[
-            'APAR' => 'APAR',
-            'APD' => 'APD',
-            'DIESEL' => 'DIESEL',
-        ];
-        foreach($invens as $inven){
-            $inven->category_label = $categoryLabels[$inven->kategori] ?? $inven->kategori;
-        }
+        // Ambil data Categories
+        $categories = Category::all();
+        // @dd($categories);
 
-        return view('manajerS.inven.inven-k4', compact('title', 'invens'));
+        return view('manajerS.inven.inven-k4', compact('title', 'invens', 'categories'));
 
     }
 
@@ -89,7 +85,7 @@ class InvenController extends Controller
         // Validasi data
         $request->validate([
             'kode' => 'required|string',
-            'kategori' => 'required|in:APAR,APD,DIESEL',
+            'category_id' => 'required|exists:categories,id',
             'nama' => 'required|string',
             'gambar' => 'required|mimes:jpeg,png,jpg,gif|max:2048',
             'lokasi' => 'required|string',
@@ -106,7 +102,7 @@ class InvenController extends Controller
         // Simpan data ke database
         Inven::create([
             'kode' => $request->kode,
-            'kategori' => $request->kategori,
+            'category_id' => $request->category_id,
             'nama' => $request->nama,
             'gambar' => $relativePath,
             'lokasi' => $request->lokasi,

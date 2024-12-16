@@ -1,0 +1,73 @@
+\App\Models\Category::create([
+    'name' => 'Peralatan Sistem Fire Fighting'
+])
+\App\Models\Category::create([
+    'name' => 'Sistem Manual Fire Protection'
+])
+\App\Models\Category::create([
+    'name' => 'Sistem Otomatisasi Proteksi'
+])
+\App\Models\Category::create([
+    'name' => 'Sistem Alarm & Deteksi'
+])
+\App\Models\Category::create([
+    'name' => 'Peralatan Penunjang'
+])
+\App\Models\Category::create([
+    'name' => 'Sarana Penyelamatan Jiwa'
+])
+\App\Models\Category::create([
+    'name' => 'Kesiapan Personil Tanggap Darurat'
+])
+Peralatan Sistem Fire Fighting:
+    Pompa Hidran
+        Hydrant Pump
+        Jockey Pump
+        Electric Pump
+        Emergency Diesel Pump
+        Emergency Sea Water Pump
+        Portable Pump
+
+    Sistem Manual Fire Protection:
+        APAT (Alat Pemadam Api Tetap)
+        APAR (Alat Pemadam Api Ringan)
+        Box Hydrant Outdoor
+        Box Hydrant Indoor
+
+    Sistem Otomatisasi Proteksi:
+        Sprinkle System
+        Gas Suppression System (CO2/Clean Agent)
+        Foam System
+        Water Spray/Water Mist
+        Chemical Dust Suppression
+        Fire Prevention System
+
+    Sistem Alarm & Deteksi:
+        Panel Alarm System
+        Heat Detector
+        Smoke Detector
+        Flame Detector
+        Gas Detector
+
+    Peralatan Penunjang:
+        Vacuum Dust Collector
+        Vacuum Truck
+        Fire Truck (Mobil Damkar)
+        Self-Contained Breathing Apparatus (SCBA)
+        Ambulance
+
+
+Sarana Penyelamatan Jiwa:
+    Pintu Kebakaran
+    Tangga Kebakaran
+    Tempat Berhimpun/Assembly Point
+    Lampu Penerangan Darurat
+    Tanda Petunjuk Arah Jalan Keluar
+    Pressurized Fan
+    Smoke Extract Fan dan Intake Fan
+    Air Handling Unit (AHU)
+    Fire Damper
+    Kotak P3K
+
+Kesiapan Personil Tanggap Darurat:
+    Kesiapan Personil

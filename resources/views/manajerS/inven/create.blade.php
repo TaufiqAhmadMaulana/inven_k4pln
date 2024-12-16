@@ -16,10 +16,14 @@
           <!-- ktegori -->
           <div class="form-outline mb-4">
             <label class="form-label" for="kategori">Kategori</label>
-            <select name="kategori" id="kategori" required>
-              <option value="APAR">APAR</option>
-              <option value="APD">APD</option>
-              <option value="DIESEL">DIESEL</option>
+            <select name="category_id" id="category_id" required>
+              @if ($categories->isNotEmpty())
+                @foreach ($categories as $category )
+                  <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
+              @else
+              <option value="">No Categories available</option>              
+              @endif
             </select>
           </div>
           <!-- Textarea input -->

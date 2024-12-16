@@ -11,14 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('invens', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('kode');
-            $table->foreignId('category_id');
-            // $table->enum('kategori',allowed: ['APAR','APD',"DIESEL"]);
-            $table->string('nama');
-            $table->string('gambar');
-            $table->string('lokasi');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -28,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('invens');
+        Schema::dropIfExists('categories');
     }
 };
